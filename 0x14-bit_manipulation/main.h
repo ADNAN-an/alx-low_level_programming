@@ -1,25 +1,14 @@
-#include "main.h"
+#ifndef MAIN_H
+#define MAIN_H
 
-/**
- * binary_to_uint - converting a binary number to an unsigned int
- * @b: string contains a binary number
- *
- * Return: converted number iss returned
- */
-unsigned int binary_to_uint(const char *b)
-{
-	int i;
-	unsigned int dec_val = 0;
+int _putchar(char c);
+int get_endianness(void);
+int clear_bit(unsigned long int *n, unsigned int index);
+unsigned int flip_bits(unsigned long int n, unsigned long int m);
+int _atoi(const char *s);
+int get_bit(unsigned long int n, unsigned int index);
+int set_bit(unsigned long int *n, unsigned int index);
+unsigned int binary_to_uint(const char *b);
+void print_binary(unsigned long int n);
 
-	if (!b)
-		return (0);
-
-	for (i = 0; b[i]; i++)
-	{
-		if (b[i] < '0' || b[i] > '1')
-			return (0);
-		dec_val = 2 * dec_val + (b[i] - '0');
-	}
-
-	return (dec_val);
-}
+#endif
